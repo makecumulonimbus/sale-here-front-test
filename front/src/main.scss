@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Prompt", sans-serif;
+}
+input,
+textarea,
+button {
+  font-family: "Prompt", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+*:focus {
+  outline: none;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  height: 90vh;
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* LAYOUT */
+.layout-bg {
+  background-image: url("./assets/images/bg.jpg");
+  background-size: 100% 100%;
+  padding: 1rem;
+  .layout-logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    img {
+      width: 200px;
+      height: 50px;
+      aspect-ratio: 16/9;
+    }
+  }
+  .layout-body {
+    background-color: #ffffff;
+    border-radius: 20px;
+    height: 90vh;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+.container-body {
+  padding: 20px;
+}
+.container-transition {
+  animation-name: moveToTop;
+  animation-duration: 0.7s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.title {
+  font-size: 37px;
+  color: #383838;
+  font-weight: 500;
+}
+
+.text-input {
+  text-align: center;
+  input {
+    height: 60px;
+    color: #4e4e4e;
+    border: 3px solid lightgray;
+    border-radius: 10px;
+    font-size: 34px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+.my-30 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.button-app {
+  padding: 10px 35px;
+  font-size: 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-image: radial-gradient(
+    ellipse farthest-corner at top left,
+    #c41417 0%,
+    #b31315 100%
+  );
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &.hide {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  &:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transform: scale(1.1);
+  }
+}
+.text-button {
+  padding: 10px 35px;
+  font-size: 20px;
+  border: 0;
+  color: #6f6f6f;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  text-decoration: unset;
+  &:hover {
+    color: #c41417;
+    transform: scale(1.1);
+  }
+}
+
+.btn-box {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-box-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.text-chat {
+  font-size: 30px;
+  color: #383838;
+  font-weight: 500;
+}
+.chat-room {
+  height: calc(90vh - 60px);
+  .box-message {
+    height: calc(100% - 75px);
+    width: auto;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    position: relative;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 0px;
+    overflow: scroll;
+    .message-data {
+      margin-top: 2px;
+      margin-bottom: 10px;
+      .box-by {
+        color: #a3a3a3;
+      }
+      .box-msg {
+        border-radius: 10px;
+        background-color: #dedede;
+        padding: 8px 12px;
+        width: max-content;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+      &.left {
+        display: flex;
+        flex-direction: column;
+      }
+      &.right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .box-msg {
+          background-color: #f77a7a;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.box-input {
+  position: relative;
+  .chat-text {
+    display: flex;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: -62px;
+    right: 0;
+    input {
+      width: 100%;
+      text-align: left;
+      padding: 0 110px 0px 20px;
+      max-width: 100%;
+    }
+    .placeholder-input-custom {
+      position: absolute;
+      bottom: 2px;
+      right: 10px;
+      color: #7a7a7a;
+    }
+  }
+}
+
+// Toastify CSS
+.Toastify__toast-body {
+  font-family: "Prompt", sans-serif;
+}
+
+// Animation
+@keyframes moveToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
